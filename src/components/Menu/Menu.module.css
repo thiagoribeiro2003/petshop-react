@@ -1,0 +1,39 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: var(--cor-primaria-fundo);
+    color: var(--cor-primaria);
+    padding: 0.8rem 1rem;
+}
+
+nav a:first-child {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+nav a:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--cor-primaria-fundo-hover);
+    color: var(--cor-primaria-hover);
+}
+
+nav a.ativo {
+    background-color: #0c0c0d;
+}
+
+@media screen and (min-width: 700px) {
+    nav a {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

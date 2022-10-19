@@ -1,52 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto&display=swap");
 
+/* Alteração do Box Model CSS: objetivo 
+de evitar problemas com dimensionamento baseado em bordas, paddings 
+alem de width e height*/
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+/* Variáveis CSS */
 :root {
-    --cor-primaria-fundo: #0b0a3f;
-    --cor-primaria-fundo-hover: #030226;
+  --cor-primaria-fundo: #0b0a3f;
+  --cor-primaria-fundo-hover: #030226;
 
-    --cor-primaria: #f2f2f2;
-    --cor-primaria-hover: #ebebeb;
+  --cor-primaria: #f2f2f2;
+  --cor-primaria-hover: #ebebeb;
 
-    --cor-secundaria-fundo: #4ba3c3;
-    --cor-secundaria-fundo-hover: #2f88a8;
+  --cor-secundaria-fundo: #4ba3c3;
+  --cor-secundaria-fundo-hover: #2f88a8;
 
-    --cor-secundaria: #e4e3f2;
-    --cor-secundaria-hover: #e2e2eb;
+  --cor-secundaria: #e4e3f2;
+  --cor-secundaria-hover: #e2e2eb;
 
-    --sombra-box: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --borda-arredondada: 0.5rem;
+  --sombra-box: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --borda-arredondada: 0.5rem;
 }
 
+/* Definindo o tamanho padrão para 1rem (equivale a 16px)*/
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #ededf7;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+
+  /* Propriedades recomendadas para
+  minimizar a chance de serrilhamento de fontes 
+  em certos navegadores/dispositivos */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #ededf7;
 }
 
 h1,
 h2,
 h3 {
-    font-family: "Fjalla One", sans-serif;
+  font-family: "Fjalla One", sans-serif;
 }
 
 h2 {
-    margin: 1rem 0;
-    color: #262626;
-    background-color: #f7f7f7;
-    padding: 1rem;
-    box-shadow: var(--sombra-box);
-    border-radius: var(--borda-arredondada);
+  margin: 1rem 0;
+  color: #262626;
+  background-color: #f7f7f7;
+  padding: 1rem;
+  box-shadow: var(--sombra-box);
+  border-radius: var(--borda-arredondada);
 }

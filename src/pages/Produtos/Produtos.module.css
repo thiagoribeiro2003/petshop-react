@@ -1,4 +1,21 @@
 .titulo_secao::before {
-  content: "🎁";
-  margin-right: 0.5rem;
+    content: "🎁 ";
+}
+
+.produtos article {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: var(--borda-arredondada);
+}
+
+@media screen and (min-width: 800px) {
+    .produtos article {
+        width: 30%;
+    }
+	
+	.produtos {
+        display: flex;
+        justify-content: space-between;
+		flex-wrap: wrap;
+    }
 }

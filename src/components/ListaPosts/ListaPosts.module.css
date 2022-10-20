@@ -1,0 +1,16 @@
+.lista_posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.post {
+    padding: 1rem;
+    width: 49%;
+    background-color: #f7f7f7;
+    box-shadow: var(--sombra-box);
+    border-radius: var(--borda-arredondada);
+    margin-bottom: 1rem;
+    transition: transform 300ms;
+}
+

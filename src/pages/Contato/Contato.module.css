@@ -1,0 +1,4 @@
+.titulo_secao::before {
+  content: "💌";
+  margin-right: 0.5rem;
+}

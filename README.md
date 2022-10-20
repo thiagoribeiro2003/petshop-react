@@ -28,3 +28,5 @@ telas a partir de X tamanho (min-width)
 ### Desktop First:
 
 Telas a partir até o tamanho X (max-width)
+
+- Dica: site para pegar emojis: `https://getemoji.com/`

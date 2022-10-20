@@ -1,11 +1,12 @@
+import { NavLink } from "react-router-dom";
 import estilos from "./Menu.module.css";
 const Menu = () => {
   return (
     <nav>
-      <a href="/">Blog</a>
-      <a href="/produtos">Produtos</a>
-      <a href="/sobre">Sobre</a>
-      <a href="/contato">Contato</a>
+      <NavLink to="/">Blog</NavLink>
+      <NavLink to="/produtos">Produtos</NavLink>
+      <NavLink to="/sobre">Sobre</NavLink>
+      <NavLink to="/contato">Contato</NavLink>
     </nav>
   );
 };

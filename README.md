@@ -30,3 +30,4 @@ telas a partir de X tamanho (min-width)
 Telas a partir até o tamanho X (max-width)
 
 - Dica: site para pegar emojis: `https://getemoji.com/`
+- Dica: Tags HTML ficam fora do Switch na hora de colocar as rotas (Fica somente dentro do BrowserRouter)

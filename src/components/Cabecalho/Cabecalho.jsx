@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import estilos from "./Cabecalho.module.css";
 import logo from "../../assets/images/logo.png";
 import Menu from "../Menu/Menu";
@@ -7,10 +8,10 @@ const Cabecalho = () => {
     <header className={estilos.topo}>
       <div className="limitador">
         <h1>
-          <a href="">
+          <Link href="">
             <img src={logo} alt="Patinha dentro do coração" />
             PetShop
-          </a>
+          </Link>
         </h1>
 
         <Menu />

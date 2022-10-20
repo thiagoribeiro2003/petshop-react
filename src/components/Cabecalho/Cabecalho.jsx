@@ -8,7 +8,7 @@ const Cabecalho = () => {
     <header className={estilos.topo}>
       <div className="limitador">
         <h1>
-          <Link href="">
+          <Link to="/">
             <img src={logo} alt="Patinha dentro do coração" />
             PetShop
           </Link>

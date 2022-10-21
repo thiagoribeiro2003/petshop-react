@@ -6,7 +6,7 @@ const Sobre = () => {
     <section>
       <h2 className={estilos.titulo_secao}>Sobre nosso PetShop</h2>
 
-      <Caixa id="sobre">
+      <Caixa>
         <h3>Missão</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus itaque

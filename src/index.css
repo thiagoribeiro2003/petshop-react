@@ -70,7 +70,8 @@ h2 {
 /* Formatação nas paginas */
 #sobre,
 #produtos,
-#contato {
+#contato,
+#pagina404 {
   width: 100%;
   background-color: #f7f7f7;
   box-shadow: var(--sombra-box);

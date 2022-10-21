@@ -1,0 +1,11 @@
+.titulo_secao::before {
+  content: "😱 ";
+}
+
+.pagina404 {
+  text-align: center;
+}
+
+.imagem404 {
+  width: 50%;
+}

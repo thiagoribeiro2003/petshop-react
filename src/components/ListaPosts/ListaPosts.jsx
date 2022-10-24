@@ -6,6 +6,7 @@ const ListaPosts = () => {
   /* Iniciamos o state do componente com um array vazio, 
   para posteriormente "preenchê-lo" com os dados vindos da API.
   Esta atribuição será feita com auxílio do setPosts. */
+
   const [posts, setPosts] = useState([]);
 
   console.log(serverApi);

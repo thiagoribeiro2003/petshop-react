@@ -1,0 +1,10 @@
+.loading {
+  background-color: white;
+  text-align: center;
+  border-radius: var(--borda-arredondada);
+}
+
+.loading h2 {
+  box-shadow: none;
+  background-color: transparent;
+}

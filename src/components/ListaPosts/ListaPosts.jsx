@@ -2,12 +2,14 @@ import { useState, useEffect } from "react"; // Hooks do React
 
 import serverApi from "../../api/server-api";
 import estilos from "./ListaPosts.module.css";
+import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 const ListaPosts = () => {
   /* Iniciamos o state do componente com um array vazio, 
   para posteriormente "preenchê-lo" com os dados vindos da API.
   Esta atribuição será feita com auxílio do setPosts. */
 
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   console.log(serverApi);
 
@@ -17,12 +19,17 @@ const ListaPosts = () => {
         const resposta = await fetch(`${serverApi}/posts`);
         const dados = await resposta.json();
         setPosts(dados);
+        setLoading(false);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
       }
     }
     getPosts();
   }, []);
+
+  if (loading) {
+    return <LoadingDesenho />;
+  }
 
   /* Sobre o userEffect
   Este hook visa permitir um maior controle sobre "efeitos colaterais" na execução do componente.

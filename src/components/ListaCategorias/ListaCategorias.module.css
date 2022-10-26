@@ -1,0 +1,29 @@
+.lista_categorias {
+    margin-top: -0.5rem;
+}
+.lista_categorias ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.lista_categorias li {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.lista_categorias a {
+    text-decoration: none;
+    background-color: #4ba3c3;
+    color: #f7f7f7;
+    font-family: "Fjalla One", sans-serif;
+    padding: inherit;
+    border-radius: var(--borda-arredondada);
+}
+
+.lista_categorias a:hover,
+.lista_categorias a:focus {
+    background-color: #2f88a8;
+}

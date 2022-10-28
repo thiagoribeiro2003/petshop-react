@@ -2,3 +2,7 @@
   content: "💌";
   margin-right: 0.5rem;
 }
+
+.formulario > div {
+  margin-bottom: 0.5rem;
+}

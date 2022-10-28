@@ -1,39 +1,54 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import serverApi from "../../api/server-api";
+import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 import estilos from "./ListaCategorias.module.css";
 
 const ListaCategorias = () => {
-  /* Atribuição do useSate para manipular os dados do componente
-    1ª parâmetro: */
+  /* Atribuição do useState para manipular os dados do componente 
+1º parâmetro: variável que terá os dados
+2º parâmetro: função responsável por atualizar (setter)
+Obs.: o que colocamos no useState representa o valor inicial */
   const [categorias, setCategorias] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getCategorias() {
       try {
-        // await =  Aguardue o termino do fetch (processamento) e depois atribui
         const resposta = await fetch(`${serverApi}/categorias`);
         const dados = await resposta.json();
+        setLoading(false);
 
         /* Precisamos passar os dados capturador da API
-        para o state do componente via Setter (obrigatório) */
+        para o state do componente via Setter (obrigatório!) */
         setCategorias(dados);
+
+        /* teste do state de categorias */
+        console.log(dados);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
       }
     }
     getCategorias();
   }, []);
-  //   console.log(categorias);
+
+  if (loading) return <LoadingDesenho texto="categorias..." />;
 
   return (
     <div className={estilos.lista_categorias}>
       <ul>
-        {categorias.map(({ id, nome }) => (
-          <li key={id}>
-            <Link to={`/categorias/${nome}`}>{nome}</Link>
-          </li>
-        ))}
+        {categorias.map(({ id, nome }) => {
+          return (
+            <li key={id}>
+              <NavLink
+                activeClassName={estilos.ativo}
+                to={`/categoria/${nome}`}
+              >
+                {nome}
+              </NavLink>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

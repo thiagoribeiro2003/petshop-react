@@ -7,6 +7,10 @@
     {
       "id": 2,
       "nome": "comportamento"
+    },
+    {
+      "id": 3,
+      "nome": "dicas"
     }
   ],
   "posts": [

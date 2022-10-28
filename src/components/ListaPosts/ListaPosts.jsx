@@ -1,23 +1,27 @@
 import { useState, useEffect } from "react"; // Hooks do React
-
 import serverApi from "../../api/server-api";
-import estilos from "./ListaPosts.module.css";
-import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 import ArtigoPost from "../ArtigoPost/ArtigoPost";
-const ListaPosts = () => {
-  /* Iniciamos o state do componente com um array vazio, 
-  para posteriormente "preenchê-lo" com os dados vindos da API.
-  Esta atribuição será feita com auxílio do setPosts. */
-
+import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
+import estilos from "./ListaPosts.module.css";
+const ListaPosts = ({ url }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(serverApi);
-
   useEffect(() => {
+    setLoading(true);
     async function getPosts() {
       try {
-        const resposta = await fetch(`${serverApi}/posts`);
+        // const resposta = await fetch(`${serverApi}/posts`);
+
+        // Solução Guilherme
+        // const resposta = await fetch(`${serverApi}/${url || "posts"}`);
+
+        // Solução Adriel
+        /* const resposta = await fetch(
+          `${serverApi}/${url != undefined ? url : "posts"}`
+        ); */
+
+        const resposta = await fetch(`${serverApi}/${url}`);
         const dados = await resposta.json();
         setPosts(dados);
         setLoading(false);
@@ -26,28 +30,23 @@ const ListaPosts = () => {
       }
     }
     getPosts();
-  }, []);
+    /* É necessário indicar a url como dependência pois
+    ela muda toda vez em que uma categoria é clicada.
+    
+    Desta forma, o useEffect "entende" que ele deve executar novamente
+    as suas ações (neste caso, executar novamente o fetch na API) */
+  }, [url]);
 
   if (loading) {
-    return <LoadingDesenho />;
+    return <LoadingDesenho texto="posts..." />;
   }
 
-  /* Sobre o userEffect
-  Este hook visa permitir um maior controle sobre "efeitos colaterais" na execução do componente.
-  
-  Receve dois parâmetros:
-  1ª: Função callback com o que será executado 
-  2ª: lista de dependências que indicarão ao useEffect quando ele deverá funcionar
-  
-  -Se não passar a lista (ou seja, se deixae sem []), useEffect executará toda vez 
-  que o componente for renderizado. Portanto, o callback se torna um loop infinito. 
-  
-  - Se passar a lista vazia (ou seja, deixar o [] vazio), useEffect executará somente
-  no momento que o componente é renderizado a primeira vez evitando o loop infinito do callback */
+  if (posts.length === 0) {
+    return <h2 style={{ textAlign: "center" }}> Não há posts!</h2>;
+  }
 
   return (
     <div className={estilos.lista_posts}>
-      {/* Versão Desestruturado */}
       {posts.map(({ id, titulo, subtitulo }) => (
         <ArtigoPost
           key={id}

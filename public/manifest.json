@@ -1,15 +1,19 @@
 {
   "short_name": "PetShop",
-  "name": "Exemplo de App criado com React como uma SPA",
+  "name": "PetShop Incrível Demais da Conta",
+  "description": "Exemplo de App React instalável em dispositivos",
   "icons": [
     {
       "src": "favicon.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "256x256"
     }
   ],
   "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "lang": "pt-br"
 }
